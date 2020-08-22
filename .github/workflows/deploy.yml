@@ -12,6 +12,13 @@ on:
     branches:
       - master
 
+env:
+  PULL_BRANCH: master
+  PUSH_BRANCH: gh-pages
+  GIT_USER: longshilin
+  GIT_EMAIL: longshilin@users.noreply.github.com
+  GIT_ADDRESS: git@github.com:Gamedev-org/gamedev-org.github.io.git
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -22,10 +29,10 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    # Runs a single command using the runners shell
     # Python & Pip Installer
     - uses: actions/setup-python@v1
     - uses: dschep/install-pipenv-action@v1
+    # prepare build env
     - name: prepare build env
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
@@ -34,15 +41,12 @@ jobs:
         echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "longshilin"
-        git config --global user.email "longshilin@users.noreply.github.com"
+        git config --global user.name ${GIT_USER}
+        git config --global user.email ${GIT_EMAIL}
         pip install mkdocs
         pip install mkdocs-bootswatch
+    # build and deploy
     - name: build 
-      env:
-        PULL_BRANCH: master
-        PUSH_BRANCH: gh-pages
-        GIT_ADDRESS: git@github.com:Gamedev-org/gamedev-org.github.io.git
       run: |
         git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
         cd ${PULL_BRANCH}; mkdocs build; cd ..;

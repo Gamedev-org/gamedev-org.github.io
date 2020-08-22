@@ -9,6 +9,9 @@ nav:
      # 服务器文章列表
      - Writing your docs: about.md
      - Styling your docs: about.md
+  - CI/CD:
+      # CI/CD文章列表
+      - 自动化部署Mkdocs: 自动化部署Mkdocs.md
   - About: help.md
 theme:
   name: materia

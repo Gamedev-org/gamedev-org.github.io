@@ -47,10 +47,9 @@ Note that table cells cannot contain any block level elements and cannot contain
  
 ## Fenced code blocks
 The fenced code blocks extension adds an alternate method of defining code blocks without indentation.
- 
-The first line should contain 3 or more backtick (`) characters, and the last line should contain the same number of backtick characters (`):
- 
- 
+
+The first line should contain 3 or more backtick (```) characters, and the last line should contain the same number of backtick characters (```):
+
 ```
  Fenced code blocks are like Standard
  Markdown’s regular code blocks, except that
@@ -59,10 +58,8 @@ The first line should contain 3 or more backtick (`) characters, and the last li
  code block.
 ```
  
- 
 With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:
  
-
 ```python
  def fn():
      pass
