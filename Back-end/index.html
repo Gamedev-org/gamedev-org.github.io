@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>About - Gamedev-org</title>
+        <title>Welcome to MkDocs - Gamedev-org</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -54,11 +54,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Back-end/about.md" class="dropdown-item">Writing your docs</a>
+    <a href="about.md" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="../Back-end/about.md" class="dropdown-item">Styling your docs</a>
+    <a href="about.md" class="dropdown-item">Styling your docs</a>
 </li>
                                 </ul>
                             </li>
@@ -71,8 +71,8 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">About</a>
+                            <li class="navitem">
+                                <a href="../help/" class="nav-link">About</a>
                             </li>
                         </ul>
 
@@ -82,16 +82,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../CI-CD/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Mkdocs/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -120,14 +110,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#tables" class="nav-link">Tables</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#fenced-code-blocks" class="nav-link">Fenced code blocks</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -149,49 +131,7 @@
 docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
-</code></pre>
-<h2 id="tables">Tables</h2>
-<p>The tables extension adds a basic table syntax to Markdown which is popular across multiple implementations. The syntax is rather simple and is generally only useful for simple tabular data.</p>
-<p>A simple table looks like this:</p>
-<pre><code> First Header | Second Header | Third Header
- ------------ | ------------- | ------------
- Content Cell | Content Cell  | Content Cell
- Content Cell | Content Cell  | Content Cell
-</code></pre>
-
-<p>If you wish, you can add a leading and tailing pipe to each line of the table:</p>
-<pre><code> | First Header | Second Header | Third Header |
- | ------------ | ------------- | ------------ |
- | Content Cell | Content Cell  | Content Cell |
- | Content Cell | Content Cell  | Content Cell |
-</code></pre>
-
-<p>Specify alignment for each column by adding colons to separator lines:</p>
-<pre><code> First Header | Second Header | Third Header
- :----------- |:-------------:| -----------:
- Left         | Center        | Right
- Left         | Center        | Right
-</code></pre>
-
-<p>Note that table cells cannot contain any block level elements and cannot contain multiple lines of text. They can, however, include inline Markdown as defined in Markdown's syntax rules.</p>
-<p>Additionally, a table must be surrounded by blank lines. There must be a blank line before and after the table.</p>
-<h2 id="fenced-code-blocks">Fenced code blocks</h2>
-<p>The fenced code blocks extension adds an alternate method of defining code blocks without indentation.</p>
-<p>The first line should contain 3 or more backtick (<code>) characters, and the last line should contain the same number of backtick characters (</code>):</p>
-<pre><code> Fenced code blocks are like Standard
- Markdown’s regular code blocks, except that
- they’re not indented and instead rely on
- start and end fence lines to delimit the
- code block.
-</code></pre>
-
-<p>With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:</p>
-<pre><code class="python"> def fn():
-     pass
-</code></pre>
-
-<p>Note that fenced code blocks can not be indented. Therefore, they cannot be nested inside list items, blockquotes, etc.</p>
-<p>Ref: https://www.mkdocs.org/user-guide/writing-your-docs/#fenced-code-blocks</p></div>
+</code></pre></div>
             </div>
         </div>
 

@@ -41,11 +41,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../about/" class="dropdown-item">Writing your docs</a>
+    <a href="../../Front-end/about.md" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="../../about/" class="dropdown-item">Styling your docs</a>
+    <a href="../../Front-end/about.md" class="dropdown-item">Styling your docs</a>
 </li>
                                 </ul>
                             </li>
@@ -54,11 +54,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../about/" class="dropdown-item">Writing your docs</a>
+    <a href="../../Back-end/about.md" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="../../about/" class="dropdown-item">Styling your docs</a>
+    <a href="../../Back-end/about.md" class="dropdown-item">Styling your docs</a>
 </li>
                                 </ul>
                             </li>
@@ -83,7 +83,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../about/" class="nav-link">
+                                <a rel="prev" href="../.." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -143,15 +143,11 @@
 <p><a href="https://docs.github.com/cn/actions">Github Actions</a> 可以很方便实现 CI/CD 工作流，下面是细化的步骤记录👇</p>
 <h1 id="_1">前提</h1>
 <h2 id="_2">部署访问密钥</h2>
-<ul>
-<li>
-<p>在本地生成一组公钥和私钥 <code>$ ssh-keygen -f github-deploy-key</code></p>
-</li>
-<li>
-<p>将公钥部署在Repo的 <code>Settings -&gt; Deploy keys -&gt; Add deploy key</code> ，记住设置的key name: <code>GH_ACTION_DEPLOY_KEY</code>，后面<code>GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}</code>会使用到。</p>
-</li>
+<ol>
+<li>在本地生成一组公钥和私钥 <code>$ ssh-keygen -f github-deploy-key</code></li>
+<li>将公钥部署在Repo的 <code>Settings -&gt; Deploy keys -&gt; Add deploy key</code> ，记住设置的key name: <code>GH_ACTION_DEPLOY_KEY</code>，后面<code>GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}</code>会使用到。</li>
 <li>将私钥部署在Repo的 <code>Settings -&gt; Secrets -&gt; Add a new secret</code></li>
-</ul>
+</ol>
 <h2 id="pages">创建用于pages展示的分支</h2>
 <p>在 <code>master</code> 分支的基础上创建一个空目录分支，取名为 <code>gh-pages</code></p>
 <h1 id="_3">部署和发布</h1>
