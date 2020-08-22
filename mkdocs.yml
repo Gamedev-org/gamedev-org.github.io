@@ -1,7 +1,13 @@
-site_name: My Docs
+site_name: Gamedev-org
 nav:
-    - Home: index.md
-    - About: about.md
+  - Home: index.md
+  - About: about.md
+  - 'User Guide':
+     - 'Writing your docs': 'writing-your-docs.md'
+     - 'Styling your docs': 'styling-your-docs.md'
+  - About:
+     - 'License': 'license.md'
+     - 'Release Notes': 'release-notes.md'
 theme:
-    name: materia
-    nav_style: light
+  name: materia
+  nav_style: light
