@@ -28,9 +28,7 @@ jobs:
     - name: Pip Installer
       uses: BSFishy/pip-action@v1
       with:
-        packages: |
-          package1
-          package2
+        packages: package1==1.0.0
     - name: prepare build env
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
