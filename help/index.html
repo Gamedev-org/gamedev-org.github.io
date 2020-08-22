@@ -114,7 +114,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#tables" class="nav-link">Tables</a>
+            <li class="nav-item" data-level="2"><a href="#tables" class="nav-link">Tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fenced-code-blocks" class="nav-link">Fenced code blocks</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -140,7 +144,7 @@ docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
 </code></pre>
-<h2 id="tables">Tables</h2>
+<h2 id="tables">Tables</h2>
 <p>The tables extension adds a basic table syntax to Markdown which is popular across multiple implementations. The syntax is rather simple and is generally only useful for simple tabular data.</p>
 <p>A simple table looks like this:</p>
 <pre><code> First Header | Second Header | Third Header
@@ -165,8 +169,8 @@ docs/
 
 <p>Note that table cells cannot contain any block level elements and cannot contain multiple lines of text. They can, however, include inline Markdown as defined in Markdown's syntax rules.</p>
 <p>Additionally, a table must be surrounded by blank lines. There must be a blank line before and after the table.</p>
-<p>## Fenced code blocks
- The fenced code blocks extension adds an alternate method of defining code blocks without indentation.</p>
+<h2 id="fenced-code-blocks">Fenced code blocks</h2>
+<p>The fenced code blocks extension adds an alternate method of defining code blocks without indentation.</p>
 <p>The first line should contain 3 or more backtick (<code>) characters, and the last line should contain the same number of backtick characters (</code>):</p>
 <p><code>Fenced code blocks are like Standard
  Markdown’s regular code blocks, except that
