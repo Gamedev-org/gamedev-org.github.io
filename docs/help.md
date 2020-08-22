@@ -16,7 +16,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## Tables
+## Tables
  The tables extension adds a basic table syntax to Markdown which is popular across multiple implementations. The syntax is rather simple and is generally only useful for simple tabular data.
  
  A simple table looks like this:
@@ -45,10 +45,11 @@ Note that table cells cannot contain any block level elements and cannot contain
  
  Additionally, a table must be surrounded by blank lines. There must be a blank line before and after the table.
  
- ## Fenced code blocks
- The fenced code blocks extension adds an alternate method of defining code blocks without indentation.
+## Fenced code blocks
+The fenced code blocks extension adds an alternate method of defining code blocks without indentation.
  
- The first line should contain 3 or more backtick (`) characters, and the last line should contain the same number of backtick characters (`):
+The first line should contain 3 or more backtick (`) characters, and the last line should contain the same number of backtick characters (`):
+ 
  
  ```
  Fenced code blocks are like Standard
@@ -58,7 +59,8 @@ Note that table cells cannot contain any block level elements and cannot contain
  code block.
  ```
  
- With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:
+ 
+With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:
  
 
  ```python
@@ -66,6 +68,6 @@ Note that table cells cannot contain any block level elements and cannot contain
      pass
  ```
  
- Note that fenced code blocks can not be indented. Therefore, they cannot be nested inside list items, blockquotes, etc.
+Note that fenced code blocks can not be indented. Therefore, they cannot be nested inside list items, blockquotes, etc.
 
 Ref: https://www.mkdocs.org/user-guide/writing-your-docs/#fenced-code-blocks
