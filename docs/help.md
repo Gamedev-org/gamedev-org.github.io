@@ -57,6 +57,7 @@ Note that table cells cannot contain any block level elements and cannot contain
  start and end fence lines to delimit the
  code block.
  ```
+ 
  With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:
  
 
@@ -64,6 +65,7 @@ Note that table cells cannot contain any block level elements and cannot contain
  def fn():
      pass
  ```
+ 
  Note that fenced code blocks can not be indented. Therefore, they cannot be nested inside list items, blockquotes, etc.
 
 Ref: https://www.mkdocs.org/user-guide/writing-your-docs/#fenced-code-blocks
