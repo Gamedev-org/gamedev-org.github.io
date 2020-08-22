@@ -51,22 +51,22 @@ The fenced code blocks extension adds an alternate method of defining code block
 The first line should contain 3 or more backtick (`) characters, and the last line should contain the same number of backtick characters (`):
  
  
- ```
+```
  Fenced code blocks are like Standard
  Markdown’s regular code blocks, except that
  they’re not indented and instead rely on
  start and end fence lines to delimit the
  code block.
- ```
+```
  
  
 With this approach, the language can optionally be specified on the first line after the backticks which informs any syntax highlighters of the language used:
  
 
- ```python
+```python
  def fn():
      pass
- ```
+```
  
 Note that fenced code blocks can not be indented. Therefore, they cannot be nested inside list items, blockquotes, etc.
 
