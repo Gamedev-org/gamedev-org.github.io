@@ -3,11 +3,14 @@ nav:
   - Home: index.md
   - About: about.md
   - Front-end:
+     # 客户端文章列表
      - Writing your docs: about.md
      - Styling your docs: about.md
   - Back-end:
-     - License: about.md
-     - Release Notes: about.md
+     # 服务器文章列表
+     - Writing your docs: about.md
+     - Styling your docs: about.md
+  - Help: help.md
 theme:
   name: materia
   nav_style: light
