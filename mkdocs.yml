@@ -3,12 +3,12 @@ nav:
   - Home: index.md
   - Front-end:
      # 客户端文章列表
-     - Writing your docs: about.md
-     - Styling your docs: about.md
+     - Writing your docs: Front-end/about.md
+     - Styling your docs: Front-end/about.md
   - Back-end:
      # 服务器文章列表
-     - Writing your docs: about.md
-     - Styling your docs: about.md
+     - Writing your docs: Back-end/about.md
+     - Styling your docs: Back-end/about.md
   - CI/CD:
       # CI/CD文章列表
       - 自动化部署Mkdocs: CI-CD/自动化部署Mkdocs.md
