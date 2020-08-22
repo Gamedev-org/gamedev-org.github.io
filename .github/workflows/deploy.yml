@@ -45,10 +45,10 @@ jobs:
         PULL_BRANCH: master
         PUSH_BRANCH: github-pages
       run: |
-        git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH}
-        cd ${PULL_BRANCH} && git checkout -b ${PULL_BRANCH}
-        mkdocs build
-        git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH} 
-        cd ../${PUSH_BRANCH}; git checkout -b ${PUSH_BRANCH}
-        mv -r ../${PULL_BRANCH}/site/* .
-        git add *; git commit -a -m "Site updated：`date`"; git push -f
+        git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH};
+        cd ${PULL_BRANCH};
+        mkdocs build;
+        git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH}; 
+        cd ../${PUSH_BRANCH};
+        mv -r ../${PULL_BRANCH}/site/* .;
+        git add *; git commit -a -m "Site updated：`date`"; git push -f;
