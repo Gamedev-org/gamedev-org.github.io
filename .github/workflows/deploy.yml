@@ -33,7 +33,7 @@ jobs:
         PUSH_BRANCH: github-pages
         PWD: ${PWD}
       run: |
-        HOME=`pwd`
+        # HOME=`pwd`
         mkdir -p ~/.ssh/
         echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
@@ -49,7 +49,7 @@ jobs:
         cd ${HOME}/${PULL_BRANCH} && mkdocs build  
     - name: deploy to github 
       run: |
-        cd ${HOME}
+        cd ~
         git clone --branch ${PUSH_BRANCH} --depth=10 git@github.com:Gamedev-org/gamedev-org.github.io.git ${PUSH_BRANCH} 
         mv ${PULL_BRANCH}/site ${PUSH_BRANCH};cd ${PUSH_BRANCH};rm -rf  ${PUSH_BRANCH}/*;
         git add *; git commit -a -m "Site updated：`date`"; git push -f;
