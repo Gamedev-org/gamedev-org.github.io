@@ -11,7 +11,7 @@ nav:
      - Styling your docs: about.md
   - CI/CD:
       # CI/CD文章列表
-      - 自动化部署Mkdocs: 自动化部署Mkdocs.md
+      - 自动化部署Mkdocs: CI-CD/自动化部署Mkdocs.md
   - About: help.md
 theme:
   name: materia
