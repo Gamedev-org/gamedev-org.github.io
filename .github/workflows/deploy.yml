@@ -29,9 +29,6 @@ jobs:
     - name: prepare build env
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
-        PULL_BRANCH: master
-        PUSH_BRANCH: github-pages
-        PWD: ${PWD}
       run: |
         # HOME=`pwd`
         mkdir -p ~/.ssh/
@@ -44,10 +41,16 @@ jobs:
         pip install mkdocs-bootstrap
         pip install mkdocs-bootswatch
     - name: build 
+      env:
+        PULL_BRANCH: master
+        PUSH_BRANCH: github-pages
       run: |
         git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH}
         cd ${HOME}/${PULL_BRANCH} && mkdocs build  
-    - name: deploy to github 
+    - name: deploy to github
+      env:
+        PULL_BRANCH: master
+        PUSH_BRANCH: github-pages 
       run: |
         cd ~
         git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PUSH_BRANCH} 
