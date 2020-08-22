@@ -23,8 +23,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     # Runs a single command using the runners shell
-    - name: Pip Installer
-      uses: BSFishy/pip-action@v1
+    # Python & Pip Installer
+    - uses: actions/setup-python@v1
+    - uses: BSFishy/pip-action@v1
+      with:
+        packages: |
+          package1
+          package2
     - name: prepare build env
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
