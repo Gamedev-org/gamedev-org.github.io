@@ -50,5 +50,5 @@ jobs:
         mkdocs build;
         git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH}; 
         cd ../${PUSH_BRANCH};
-        mv -r ../${PULL_BRANCH}/site/* .;
+        mv -R ../${PULL_BRANCH}/site/* .;
         git add *; git commit -a -m "Site updated：`date`"; git push -f;
