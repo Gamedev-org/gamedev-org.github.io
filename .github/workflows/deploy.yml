@@ -30,7 +30,6 @@ jobs:
       env:
         GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
       run: |
-        # HOME=`pwd`
         mkdir -p ~/.ssh/
         echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
@@ -43,12 +42,12 @@ jobs:
     - name: build 
       env:
         PULL_BRANCH: master
-        PUSH_BRANCH: github-pages
+        PUSH_BRANCH: gh-pages
       run: |
         git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH};
         cd ${PULL_BRANCH};
         mkdocs build;
         git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH}; 
         cd ../${PUSH_BRANCH};
-        mv -R ../${PULL_BRANCH}/site/* .;
+        mv ../${PULL_BRANCH}/site/* .;
         git add *; git commit -a -m "Site updated：`date`"; git push -f;
