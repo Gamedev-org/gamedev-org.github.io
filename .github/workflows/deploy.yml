@@ -46,14 +46,9 @@ jobs:
         PUSH_BRANCH: github-pages
       run: |
         git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH}
-        git checkout -b  ${PULL_BRANCH}
-        cd ${PULL_BRANCH} && mkdocs build  
-    - name: deploy to github
-      env:
-        PULL_BRANCH: master
-        PUSH_BRANCH: github-pages 
-      run: |
+        cd ${PULL_BRANCH} && git checkout -b ${PULL_BRANCH}
+        mkdocs build
         git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH} 
-        git checkout -b ${PUSH_BRANCH}
-        mv -r site/* ../${PUSH_BRANCH};cd ../${PUSH_BRANCH};
-        git add *; git commit -a -m "Site updated：`date`"; git push -f;
+        cd ../${PUSH_BRANCH}; git checkout -b ${PUSH_BRANCH}
+        mv -r ../${PULL_BRANCH}/site/* .
+        git add *; git commit -a -m "Site updated：`date`"; git push -f
