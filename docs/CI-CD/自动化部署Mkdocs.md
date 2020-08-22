@@ -2,10 +2,9 @@
 
 # 前提
 ## 部署访问密钥
-- 在本地生成一组公钥和私钥 `$ ssh-keygen -f github-deploy-key`
-
-- 将公钥部署在Repo的 `Settings -> Deploy keys -> Add deploy key` ，记住设置的key name: `GH_ACTION_DEPLOY_KEY`，后面`GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}`会使用到。
-- 将私钥部署在Repo的 `Settings -> Secrets -> Add a new secret`
+1. 在本地生成一组公钥和私钥 `$ ssh-keygen -f github-deploy-key`
+2. 将公钥部署在Repo的 `Settings -> Deploy keys -> Add deploy key` ，记住设置的key name: `GH_ACTION_DEPLOY_KEY`，后面`GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}`会使用到。
+3. 将私钥部署在Repo的 `Settings -> Secrets -> Add a new secret`
 ## 创建用于pages展示的分支
 在 `master` 分支的基础上创建一个空目录分支，取名为 `gh-pages`
 
