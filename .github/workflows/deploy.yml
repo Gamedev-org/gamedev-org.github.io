@@ -43,7 +43,7 @@ jobs:
         PULL_BRANCH: master
         PUSH_BRANCH: gh-pages
         GIT_ADDRESS: git@github.com:Gamedev-org/gamedev-org.github.io.git
-      rucn: |
+      run: |
         git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
         cd ${PULL_BRANCH}; mkdocs build; cd ..;
         git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH}; 

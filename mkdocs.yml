@@ -2,12 +2,12 @@ site_name: Gamedev-org
 nav:
   - Home: index.md
   - About: about.md
-  - 'User Guide':
-     - 'Writing your docs': 'writing-your-docs.md'
-     - 'Styling your docs': 'styling-your-docs.md'
-  - About:
-     - 'License': 'license.md'
-     - 'Release Notes': 'release-notes.md'
+  - Front-end:
+     - Writing your docs: about.md
+     - Styling your docs: about.md
+  - Back-end:
+     - License: about.md
+     - Release Notes: about.md
 theme:
   name: materia
   nav_style: light
