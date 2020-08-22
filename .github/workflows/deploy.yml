@@ -45,9 +45,7 @@ jobs:
         PUSH_BRANCH: gh-pages
       run: |
         git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH};
-        cd ${PULL_BRANCH};
-        mkdocs build;
-        git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ../${PUSH_BRANCH}; 
-        cd ../${PUSH_BRANCH};
-        cp -f ../${PULL_BRANCH}/site/* .;
-        git add *; git commit -a -m "Site updated：`date`"; git push -f;
+        cd ${PULL_BRANCH}; mkdocs build;cd ..;
+        git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PUSH_BRANCH}; 
+        mv -f ${PULL_BRANCH}/site/* ${PUSH_BRANCH};
+        cd ${PUSH_BRANCH}; git add *; git commit -a -m "Site updated：`date`"; git push -f;
