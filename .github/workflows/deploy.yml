@@ -33,13 +33,16 @@ jobs:
         PUSH_BRANCH: github-pages
         PWD: ${PWD}
       run: |
-        HOME=`pwd`
-        mkdir -p ~/.ssh/
-        echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name "longshilin"
-        git config --global user.email "longshilin@users.noreply.github.com"
+        - HOME=`pwd`
+        - mkdir -p ~/.ssh/
+        - echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+        - chmod 600 ~/.ssh/id_rsa
+        - ssh-keyscan github.com >> ~/.ssh/known_hosts
+        - git config --global user.name "longshilin"
+        - git config --global user.email "longshilin@users.noreply.github.com"
+        - pip install mkdocs
+        - pip install mkdocs-bootstrap
+        - pip install mkdocs-bootswatch
 
     - name: build 
       run: |
