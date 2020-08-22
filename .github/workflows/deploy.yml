@@ -45,11 +45,11 @@ jobs:
         pip install mkdocs-bootswatch
     - name: build 
       run: |
-        git clone --branch ${PULL_BRANCH} --depth=10 git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH}
+        git clone --branch ${PULL_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PULL_BRANCH}
         cd ${HOME}/${PULL_BRANCH} && mkdocs build  
     - name: deploy to github 
       run: |
         cd ~
-        git clone --branch ${PUSH_BRANCH} --depth=10 git@github.com:Gamedev-org/gamedev-org.github.io.git ${PUSH_BRANCH} 
+        git clone --branch ${PUSH_BRANCH} git@github.com:Gamedev-org/gamedev-org.github.io.git ${PUSH_BRANCH} 
         mv ${PULL_BRANCH}/site ${PUSH_BRANCH};cd ${PUSH_BRANCH};rm -rf  ${PUSH_BRANCH}/*;
         git add *; git commit -a -m "Site updated：`date`"; git push -f;
