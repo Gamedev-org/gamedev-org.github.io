@@ -1,36 +1,25 @@
-name: Main workflow
-
-on:
-  push:
-    branches:
-    - raw
-
+on: push
+name: Deploy to Heroku
 jobs:
-  build:
-
-    runs-on: ubuntu-18.04
-
+  release:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js lts
-      uses: actions/setup-node@v2-beta
+    - uses: actions/checkout@master
+    - name: login
+      uses: actions/heroku@master
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       with:
-        node-version: '12.x'
-    - name: prepare build env
+        args: container:login
+    - name: push
+      uses: actions/heroku@master
       env:
-        GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
-        NEXT_VERSION: v8.0.0-rc.2
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$GH_ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        git config --global user.name 'gythialy'
-        git config --global user.email 'gythialy@users.noreply.github.com'
-        npm i -g hexo-cli
-        npm i
-    - name: deploy to github 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      with:
+        args: container:push -a calm-fortress-1234 web
+    - name: release
+      uses: actions/heroku@master
       env:
-        HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
-      run: |
-        hexo generate && hexo algolia && hexo deploy
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      with:
+        args: container:release -a calm-fortress-1234 web
