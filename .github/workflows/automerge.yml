@@ -45,5 +45,6 @@ jobs:
         run: |
           git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
           git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH};
+          mv ${PULL_BRANCH}/mkdocs.yml ${PUSH_BRANCH}/mkdocs.yml;
           (cd ${PULL_BRANCH} && tar --exclude='.github' --exclude='.gitignore' -c .) | (cd ${PUSH_BRANCH}/docs && tar -xf -)
           cd ${PUSH_BRANCH}; git add *; git commit -a -m "Site updated：`date`"; git push -f;
