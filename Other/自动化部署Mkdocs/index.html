@@ -110,29 +110,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">前提</a>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">前提</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">部署访问密钥</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#pages" class="nav-link">创建用于pages展示的分支</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-level="1"><a href="#_3" class="nav-link">部署和发布</a>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">部署和发布</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#github-action" class="nav-link">编写GitHub Action</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">发布</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -141,17 +125,17 @@
                     <div class="col-md-9" role="main">
 
 <p><a href="https://docs.github.com/cn/actions">Github Actions</a> 可以很方便实现 CI/CD 工作流，下面是细化的步骤记录👇</p>
-<h1 id="_1">前提</h1>
-<h2 id="_2">部署访问密钥</h2>
+<h2 id="_1">前提<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<h3 id="_2">部署访问密钥<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
 <ol>
 <li>在本地生成一组公钥和私钥 <code>$ ssh-keygen -f github-deploy-key</code></li>
 <li>将公钥部署在Repo的 <code>Settings -&gt; Deploy keys -&gt; Add deploy key</code> ，记住设置的key name: <code>GH_ACTION_DEPLOY_KEY</code>，后面<code>GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}</code>会使用到。</li>
 <li>将私钥部署在Repo的 <code>Settings -&gt; Secrets -&gt; Add a new secret</code></li>
 </ol>
-<h2 id="pages">创建用于pages展示的分支</h2>
+<h3 id="pages">创建用于pages展示的分支<a class="headerlink" href="#pages" title="Permanent link">#</a></h3>
 <p>在 <code>master</code> 分支的基础上创建一个空目录分支，取名为 <code>gh-pages</code></p>
-<h1 id="_3">部署和发布</h1>
-<h2 id="github-action">编写GitHub Action</h2>
+<h2 id="_3">部署和发布<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h3 id="github-action">编写GitHub Action<a class="headerlink" href="#github-action" title="Permanent link">#</a></h3>
 <p>点击Repo的Actions链接，在线生成yaml模板文件，并使用下面的脚本文件（或最新版<a href="https://github.com/Gamedev-org/gamedev-org.github.io/blob/master/.github/workflows/deploy.yml">deploy.yml</a>）替换模板文件👇，commit即在线部署成功，以后在 <code>master</code> 分支有 <code>push</code> 或者 <code>pull_request</code> 的请求时会自动触发该Action操作脚本。</p>
 <pre><code class="yaml"># This is a basic workflow to help you get started with Actions
 
@@ -211,7 +195,7 @@ jobs:
         cd ${PUSH_BRANCH}; git add *; git commit -a -m &quot;Site updated：`date`&quot;; git push -f;
 </code></pre>
 
-<h2 id="_4">发布</h2>
+<h3 id="_4">发布<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
 <p>在Repo的 <code>Settings -&gt; GitHub Pages</code> 中设置部署的分支为 <code>gh-pages</code> ，并查看静态网站，大功告成～</p></div>
             </div>
         </div>

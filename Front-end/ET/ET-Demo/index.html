@@ -110,18 +110,14 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#demo" class="nav-link">Demo启动与加载</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
 <p>记录学习ET框架的自带Demo</p>
-<h2 id="demo">Demo启动与加载</h2>
-<h3 id="demo_1">Demo启动脚本</h3>
+<h3 id="demo">Demo启动与加载<a class="headerlink" href="#demo" title="Permanent link">#</a></h3>
+<h4 id="demo_1">Demo启动脚本<a class="headerlink" href="#demo_1" title="Permanent link">#</a></h4>
 <p>Demo的初始入口是挂载在 <code>Init.Scene</code> 场景中的 <code>Unity.Model.Init.cs</code> 类，其中加载了一系列的 <code>Component</code> ,这个后面再探讨。</p>
 <p>其中终点在下面这段代码：</p>
 <pre><code class="c#">// 下载ab包
@@ -166,7 +162,7 @@ Game.Hotfix.GotoHotfix(); // 解析热更新代码
 </code></pre>
 
 <p>上面的代码即展示UI界面如何完成数据绑定以及方法绑定的，让UI开发无需在场景中进行拖拽绑定赋值，只用完成摆放，后面的工作都通过代码来控制，省时省力还不容易出错。</p>
-<h3 id="_1">点击登录按钮，执行登录操作</h3>
+<h4 id="_1">点击登录按钮，执行登录操作<a class="headerlink" href="#_1" title="Permanent link">#</a></h4>
 <p>在展示了登录界面之后，点击登录按钮会执行上面 <code>OnLogin()</code> 方法，这里面的操作就是比较核心的了。</p>
 <blockquote>
 <p>待更新...</p>
