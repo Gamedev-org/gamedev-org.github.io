@@ -2,16 +2,16 @@ site_name: gamedev.space
 nav:
   - Home: index.md
   - Front-end:
-     # 客户端文章列表
-     - Writing your docs: Front-end/index.md
-     - Styling your docs: Front-end/index1.md
+      # 客户端文章列表
+      - ET-Demo: ET/ET-Demo.md
   - Back-end:
-     # 服务器文章列表
-     - Writing your docs: Back-end/index.md
-     - Styling your docs: Back-end/index.md
-  - CI/CD:
+      # 服务器文章列表
+      - Writing your docs: Back-end/index.md
+      - Styling your docs: Back-end/index.md
+  - Other:
       # CI/CD文章列表
-      - 自动化部署Mkdocs: CI-CD/自动化部署Mkdocs.md
+      - 自动化部署Mkdocs: Other/自动化部署Mkdocs.md
+      - 工具链: Other/工具链.md
   - About: help.md
 theme:
   name: materia
