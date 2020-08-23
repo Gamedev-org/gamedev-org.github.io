@@ -45,6 +45,7 @@ jobs:
         git config --global user.email ${GIT_EMAIL}
         pip install mkdocs
         pip install mkdocs-bootswatch
+        pip install mkdocs-foo-plugin
     # build and deploy
     - name: build 
       run: |
