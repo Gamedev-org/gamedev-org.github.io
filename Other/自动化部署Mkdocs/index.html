@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Welcome to MkDocs - gamedev.space</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>自动化部署Mkdocs - gamedev.space</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="..">gamedev.space</a>
+                <a class="navbar-brand" href="../..">gamedev.space</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,14 +34,14 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href=".." class="nav-link">Home</a>
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Front-end <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../ET/ET-Demo.md" class="dropdown-item">ET-Demo</a>
+    <a href="../../ET/ET-Demo.md" class="dropdown-item">ET-Demo</a>
 </li>
                                 </ul>
                             </li>
@@ -50,29 +50,29 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Back-end/" class="dropdown-item">Writing your docs</a>
+    <a href="../../Back-end/" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="../Back-end/index2/" class="dropdown-item">Styling your docs</a>
+    <a href="../../Back-end/index2/" class="dropdown-item">Styling your docs</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Other <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../Other/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Mkdocs/" class="dropdown-item">自动化部署Mkdocs</a>
+    <a href="./" class="dropdown-item active">自动化部署Mkdocs</a>
 </li>
                                     
 <li>
-    <a href="../Other/%E5%B7%A5%E5%85%B7%E9%93%BE/" class="dropdown-item">工具链</a>
+    <a href="../%E5%B7%A5%E5%85%B7%E9%93%BE/" class="dropdown-item">工具链</a>
 </li>
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="../help/" class="nav-link">About</a>
+                                <a href="../../help/" class="nav-link">About</a>
                             </li>
                         </ul>
 
@@ -82,6 +82,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Back-end/index2/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E5%B7%A5%E5%85%B7%E9%93%BE/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -100,13 +110,26 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">前提</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">部署访问密钥</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-level="2"><a href="#pages" class="nav-link">创建用于pages展示的分支</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_3" class="nav-link">部署和发布</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#github-action" class="nav-link">编写GitHub Action</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">发布</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -117,21 +140,79 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<p><a href="https://docs.github.com/cn/actions">Github Actions</a> 可以很方便实现 CI/CD 工作流，下面是细化的步骤记录👇</p>
+<h1 id="_1">前提</h1>
+<h2 id="_2">部署访问密钥</h2>
+<ol>
+<li>在本地生成一组公钥和私钥 <code>$ ssh-keygen -f github-deploy-key</code></li>
+<li>将公钥部署在Repo的 <code>Settings -&gt; Deploy keys -&gt; Add deploy key</code> ，记住设置的key name: <code>GH_ACTION_DEPLOY_KEY</code>，后面<code>GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}</code>会使用到。</li>
+<li>将私钥部署在Repo的 <code>Settings -&gt; Secrets -&gt; Add a new secret</code></li>
+</ol>
+<h2 id="pages">创建用于pages展示的分支</h2>
+<p>在 <code>master</code> 分支的基础上创建一个空目录分支，取名为 <code>gh-pages</code></p>
+<h1 id="_3">部署和发布</h1>
+<h2 id="github-action">编写GitHub Action</h2>
+<p>点击Repo的Actions链接，在线生成yaml模板文件，并使用下面的脚本文件（或最新版<a href="https://github.com/Gamedev-org/gamedev-org.github.io/blob/master/.github/workflows/deploy.yml">deploy.yml</a>）替换模板文件👇，commit即在线部署成功，以后在 <code>master</code> 分支有 <code>push</code> 或者 <code>pull_request</code> 的请求时会自动触发该Action操作脚本。</p>
+<pre><code class="yaml"># This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  PULL_BRANCH: master
+  PUSH_BRANCH: gh-pages
+  GIT_USER: longshilin
+  GIT_EMAIL: longshilin@users.noreply.github.com
+  GIT_ADDRESS: git@github.com:Gamedev-org/gamedev-org.github.io.git
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called &quot;build&quot;
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    # Python &amp; Pip Installer
+    - uses: actions/setup-python@v1
+    - uses: dschep/install-pipenv-action@v1
+    # prepare build env
+    - name: prepare build env
+      env:
+        GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}
+      run: |
+        mkdir -p ~/.ssh/
+        echo &quot;$GH_ACTION_DEPLOY_KEY&quot; &gt; ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com &gt;&gt; ~/.ssh/known_hosts
+        git config --global user.name ${GIT_USER}
+        git config --global user.email ${GIT_EMAIL}
+        pip install mkdocs
+        pip install mkdocs-bootswatch
+    # build and deploy
+    - name: build 
+      run: |
+        git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
+        cd ${PULL_BRANCH}; mkdocs build; cd ..;
+        git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH}; 
+        # mv -f ${PULL_BRANCH}/site/* ${PUSH_BRANCH};
+        (cd ${PULL_BRANCH}/site &amp;&amp; tar c .) | (cd ${PUSH_BRANCH} &amp;&amp; tar xf -)
+        cd ${PUSH_BRANCH}; git add *; git commit -a -m &quot;Site updated：`date`&quot;; git push -f;
+</code></pre>
+
+<h2 id="_4">发布</h2>
+<p>在Repo的 <code>Settings -&gt; GitHub Pages</code> 中设置部署的分支为 <code>gh-pages</code> ，并查看静态网站，大功告成～</p></div>
             </div>
         </div>
 
@@ -140,11 +221,11 @@ docs/
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>gamedev.space</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>ET Demo - gamedev.space</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
 
-        <script src="/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/js/bootstrap.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="/.">gamedev.space</a>
+                <a class="navbar-brand" href="../../..">gamedev.space</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,14 +34,14 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/." class="nav-link">Home</a>
+                                <a href="../../.." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Front-end <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/ET/ET-Demo.md" class="dropdown-item">ET-Demo</a>
+    <a href="../../../ET/ET-Demo.md" class="dropdown-item">ET-Demo</a>
 </li>
                                 </ul>
                             </li>
@@ -50,11 +50,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/Back-end/" class="dropdown-item">Writing your docs</a>
+    <a href="../../../Back-end/" class="dropdown-item">Writing your docs</a>
 </li>
                                     
 <li>
-    <a href="/Back-end/index2/" class="dropdown-item">Styling your docs</a>
+    <a href="../../../Back-end/index2/" class="dropdown-item">Styling your docs</a>
 </li>
                                 </ul>
                             </li>
@@ -63,16 +63,16 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/Other/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Mkdocs/" class="dropdown-item">自动化部署Mkdocs</a>
+    <a href="../../../Other/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Mkdocs/" class="dropdown-item">自动化部署Mkdocs</a>
 </li>
                                     
 <li>
-    <a href="/Other/%E5%B7%A5%E5%85%B7%E9%93%BE/" class="dropdown-item">工具链</a>
+    <a href="../../../Other/%E5%B7%A5%E5%85%B7%E9%93%BE/" class="dropdown-item">工具链</a>
 </li>
                                 </ul>
                             </li>
                             <li class="navitem">
-                                <a href="/help/" class="nav-link">About</a>
+                                <a href="../../../help/" class="nav-link">About</a>
                             </li>
                         </ul>
 
@@ -89,15 +89,78 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#demo" class="nav-link">Demo启动与加载</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<p>记录学习ET框架的自带Demo</p>
+<h2 id="demo">Demo启动与加载</h2>
+<h3 id="demo_1">Demo启动脚本</h3>
+<p>Demo的初始入口是挂载在 <code>Init.Scene</code> 场景中的 <code>Unity.Model.Init.cs</code> 类，其中加载了一系列的 <code>Component</code> ,这个后面再探讨。</p>
+<p>其中终点在下面这段代码：</p>
+<pre><code class="c#">// 下载ab包
+await BundleHelper.DownloadBundle();
+
+Game.Hotfix.LoadHotfixAssembly(); // 加载热更新程序集 &quot;code.unity3d&quot; Bundle
+
+// 加载配置
+Game.Scene.GetComponent&lt;ResourcesComponent&gt;().LoadBundle(&quot;config.unity3d&quot;);
+Game.Scene.AddComponent&lt;ConfigComponent&gt;(); // 配置组件，管理所有config配置
+Game.Scene.GetComponent&lt;ResourcesComponent&gt;().UnloadBundle(&quot;config.unity3d&quot;);
+Game.Scene.AddComponent&lt;OpcodeTypeComponent&gt;(); // 管理操作编码类型组件，区分消息分发时的操作类型
+Game.Scene.AddComponent&lt;MessageDispatcherComponent&gt;(); // 消息分发组件
+
+Game.Hotfix.GotoHotfix(); // 解析热更新代码
+</code></pre>
+
+<p>上面的意思是从资源服务器下载ab包，并加载热更新资源并解析热更新代码等，下面具体来看热更新代码。</p>
+<p>通过 <code>Game.Hotfix.GotoHotfix();</code> 往下会发现分为两种条件，一种是基于ILRuntime的代码解析一种是基于Mono的代码解析，具体使用哪种需要看 <code>Unity -&gt; Project Setting -&gt; Player</code> </p>
+<p><img alt="" src="https://gamedev-org.github.io/images/20200823123920.png" /></p>
+<p>通常，Editor开发模式下使用Mono，因为可以Debug调试热更新层的代码，在正式环境中使用ILRuntime模式。</p>
+<p>接着进入 <code>Unity.Hotfix.Init.cs</code> 类，仍然是加载一些组件，这里需要说明的是加载ConfigComponent组件，即加载游戏配置表数据等，在下面的Get方法中获取指定ID的数据信息，然后发送一个类型为 <code>InitSceneStart</code> 的事件请求。</p>
+<p>最后在订阅该请求的地方执行订阅逻辑，创建一个UILogin的对象工厂 <code>UILoginFactory</code> ，其中的Create()方法中有具体的实例化登录界面的逻辑，然后将实例化的 <code>UILoginComponent</code> 节点绑定在 <code>UIComponent</code> 组件上，这里的UI数据绑定都在 <code>UILoginComponent</code> 中完成。</p>
+<pre><code class="c#">    public class UILoginComponent: Component
+    {
+        private GameObject account;
+        private GameObject loginBtn;
+
+        public void Awake()
+        {
+            ReferenceCollector rc = this.GetParent&lt;UI&gt;().GameObject.GetComponent&lt;ReferenceCollector&gt;();
+            loginBtn = rc.Get&lt;GameObject&gt;(&quot;LoginBtn&quot;);
+            loginBtn.GetComponent&lt;Button&gt;().onClick.Add(OnLogin);
+            this.account = rc.Get&lt;GameObject&gt;(&quot;Account&quot;);
+        }
+
+        public void OnLogin()
+        {
+            LoginHelper.OnLoginAsync(this.account.GetComponent&lt;InputField&gt;().text).Coroutine();
+        }
+    }
+</code></pre>
+
+<p>上面的代码即展示UI界面如何完成数据绑定以及方法绑定的，让UI开发无需在场景中进行拖拽绑定赋值，只用完成摆放，后面的工作都通过代码来控制，省时省力还不容易出错。</p>
+<h3 id="_1">点击登录按钮，执行登录操作</h3>
+<p>在展示了登录界面之后，点击登录按钮会执行上面 <code>OnLogin()</code> 方法，这里面的操作就是比较核心的了。</p>
+<blockquote>
+<p>待更新...</p>
+</blockquote></div>
             </div>
         </div>
 
@@ -106,11 +169,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js" defer></script>
-        <script src="/search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
