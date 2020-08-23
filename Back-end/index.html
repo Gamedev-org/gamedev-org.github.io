@@ -5,25 +5,28 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
-        
+        <meta name="author" content="Gamedev.space Team">
+        <link rel="canonical" href="https://gamedev-org.github.io/Back-end/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Writing your docs - gamedev.space</title>
+        <title>Writing your docs - Gamedev.space</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/color-brewer.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../css/extra.css" rel="stylesheet">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/django.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">gamedev.space</a>
+                <a class="navbar-brand" href="..">Gamedev.space</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -96,6 +99,9 @@
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/Gamedev-org/gamedev-org.github.io" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -114,8 +120,16 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
+            <li class="nav-item" data-level="1"><a href="#welcome-to-mkdocs" class="nav-link">Welcome to MkDocs</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -123,16 +137,16 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">#</a></h2>
+<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link"></a></h1>
 <p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h3 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">#</a></h3>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link"></a></h2>
 <ul>
 <li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
 <li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
 <li><code>mkdocs build</code> - Build the documentation site.</li>
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
-<h3 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">#</a></h3>
+<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link"></a></h2>
 <pre><code>mkdocs.yml    # The configuration file.
 docs/
     index.md  # The documentation homepage.
@@ -143,6 +157,7 @@ docs/
 
         <footer class="col-md-12">
             <hr>
+                <p>Copyright &copy; 2020 | Maintained by the <a href="https://gamedev-org.github.io/">Gamedev.space Team</a>.</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
