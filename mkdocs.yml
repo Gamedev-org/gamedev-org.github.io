@@ -3,7 +3,7 @@ nav:
   - Home: index.md
   - Front-end:
       # 客户端文章列表
-      - ET-Demo: ET/ET-Demo.md
+      - ET-Demo: Front-end/ET/ET-Demo.md
   - Back-end:
       # 服务器文章列表
       - Writing your docs: Back-end/index.md
