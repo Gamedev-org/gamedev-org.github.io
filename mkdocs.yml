@@ -1,30 +1,3 @@
-#site_name: gamedev.space
-#nav:
-#  - Home: index.md
-#  - Front-end:
-#      # 客户端文章列表
-#      - ET-Demo: Front-end/ET/ET-Demo.md
-#      - Writing your docs: Front-end/index.md
-#  - Back-end:
-#      # 服务器文章列表
-#      - Writing your docs: Back-end/index.md
-#      - Styling your docs: Back-end/index2.md
-#  - Other:
-#      # CI/CD文章列表 
-#      - 自动化部署Mkdocs: Other/自动化部署Mkdocs.md
-#      - 工具链: Other/工具链.md
-#  - About: help.md
-#
-#markdown_extensions:
-#  - toc:
-#      permalink: "#"
-#      baselevel: 2
-#theme:
-#  name: materia
-#  nav_style: light
-  
-  
-  
 site_name: Gamedev.space
 site_url: https://gamedev-org.github.io/
 site_description: Game Dev Project documentation.
@@ -73,3 +46,29 @@ copyright: Copyright &copy; 2020 | Maintained by the <a href="https://gamedev-or
 
 plugins:
   - search
+
+
+#site_name: gamedev.space
+#nav:
+#  - Home: index.md
+#  - Front-end:
+#      # 客户端文章列表
+#      - ET-Demo: Front-end/ET/ET-Demo.md
+#      - Writing your docs: Front-end/index.md
+#  - Back-end:
+#      # 服务器文章列表
+#      - Writing your docs: Back-end/index.md
+#      - Styling your docs: Back-end/index2.md
+#  - Other:
+#      # CI/CD文章列表 
+#      - 自动化部署Mkdocs: Other/自动化部署Mkdocs.md
+#      - 工具链: Other/工具链.md
+#  - About: help.md
+#
+#markdown_extensions:
+#  - toc:
+#      permalink: "#"
+#      baselevel: 2
+#theme:
+#  name: materia
+#  nav_style: light
