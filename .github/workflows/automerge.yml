@@ -48,5 +48,5 @@ jobs:
         run: |
           git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
           git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH}; 
-          (cd ${PULL_BRANCH} && tar  --exclude='.github' --exclude='.gitignore' c .) | (cd ${PUSH_BRANCH}/docs && tar xf -)
+          (cd ${PULL_BRANCH} && tar --exclude='.github' --exclude='.gitignore' -c .) | (cd ${PUSH_BRANCH}/docs && tar -xf -)
           git add *; git commit -a -m "Site updated：`date`"; git push -f;
