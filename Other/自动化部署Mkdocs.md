@@ -1,14 +1,17 @@
+# 自动化部署MkDocs Pages
+
 [Github Actions](https://docs.github.com/cn/actions) 可以很方便实现 CI/CD 工作流，下面是细化的步骤记录👇
 
-# 前提
+---
+
 ## 部署访问密钥
 1. 在本地生成一组公钥和私钥 `$ ssh-keygen -f github-deploy-key`
 2. 将公钥部署在Repo的 `Settings -> Deploy keys -> Add deploy key` ，记住设置的key name: `GH_ACTION_DEPLOY_KEY`，后面`GH_ACTION_DEPLOY_KEY: ${{ secrets.GH_ACTION_DEPLOY_KEY }}`会使用到。
 3. 将私钥部署在Repo的 `Settings -> Secrets -> Add a new secret`
+
 ## 创建用于pages展示的分支
 在 `master` 分支的基础上创建一个空目录分支，取名为 `gh-pages`
 
-# 部署和发布
 ## 编写GitHub Action
 点击Repo的Actions链接，在线生成yaml模板文件，并使用下面的脚本文件（或最新版[deploy.yml](https://github.com/Gamedev-org/gamedev-org.github.io/blob/master/.github/workflows/deploy.yml)）替换模板文件👇，commit即在线部署成功，以后在 `master` 分支有 `push` 或者 `pull_request` 的请求时会自动触发该Action操作脚本。
 
