@@ -61,7 +61,7 @@ extra_css:
 
 markdown_extensions:
   - toc:
-      permalink: &para;
+      permalink: 
   - admonition
   - def_list
 #  - mdx_gh_links:
