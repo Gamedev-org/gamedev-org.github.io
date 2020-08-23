@@ -4,7 +4,7 @@ nav:
   - Front-end:
      # 客户端文章列表
      - Writing your docs: Front-end/index.md
-     - Styling your docs: Front-end/index.md
+     - Styling your docs: Front-end/index1.md
   - Back-end:
      # 服务器文章列表
      - Writing your docs: Back-end/index.md
