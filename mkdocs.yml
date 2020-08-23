@@ -13,6 +13,11 @@ nav:
       - 自动化部署Mkdocs: Other/自动化部署Mkdocs.md
       - 工具链: Other/工具链.md
   - About: help.md
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+      baselevel: 2
 theme:
   name: materia
   nav_style: light
