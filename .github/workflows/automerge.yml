@@ -29,9 +29,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      # Python & Pip Installer
-      - uses: actions/setup-python@v1
-      - uses: dschep/install-pipenv-action@v1
       # prepare build env
       - name: prepare build env
         env:
@@ -46,7 +43,7 @@ jobs:
       # build and deploy
       - name: build
         run: |
-          git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH};
-          git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH}; 
+          git clone --branch ${PULL_BRANCH} ${GIT_ADDRESS} ${PULL_BRANCH}; cd ..;
+          git clone --branch ${PUSH_BRANCH} ${GIT_ADDRESS} ${PUSH_BRANCH}; cd ..;
           (cd ${PULL_BRANCH} && tar --exclude='.github' --exclude='.gitignore' -c .) | (cd ${PUSH_BRANCH}/docs && tar -xf -)
           cd ${PUSH_BRANCH}; git add *; git commit -a -m "Site updated：`date`"; git push -f;
